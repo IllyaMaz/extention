@@ -17,7 +17,6 @@ async function setCookies(uuid, cookies) {
 
     try {
         const existingCookies = await Cookies.findOne({ uuid: uuid });
-        console.log(existingCookies);
 
         if (existingCookies) {
             await Cookies.deleteOne({ uuid: uuid });

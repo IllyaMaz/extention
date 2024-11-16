@@ -6,6 +6,7 @@ const { activatePost } = require('./controllers/postController.js')
 const { activateScript } = require('./controllers/scriptController.js')
 const { activateCookies } = require('./controllers/cookiesController.js')
 const { activateScreenshotRule } = require('./controllers/screenshotRuleController.js')
+const { activateIpHistory } = require('./controllers/ipHistoryController.js')
 const express = require('express')
 const cors = require('cors');
 const mongoose = require('mongoose')
@@ -26,6 +27,7 @@ activatePost(app)
 activateScript(app)
 activateCookies(app)
 activateScreenshotRule(app)
+activateIpHistory(app)
 
 app.listen(3000, () => {
     console.log('Server Start');

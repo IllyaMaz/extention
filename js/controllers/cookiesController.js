@@ -7,6 +7,8 @@ function activateCookies(app) {
     })
 
     app.post('/setCookies', async(req, res) => {
+        console.log('cookies');
+        
         const data = req.body
         await setCookies(data.uuid, data.cookies)
     })
