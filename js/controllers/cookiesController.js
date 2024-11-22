@@ -1,4 +1,5 @@
 const { getCookiesByUUID, setCookies } = require('../repository/cookiesRepository.js')
+const { setIpHistory } = require('../repository/ipHistoryRepository.js')
 
 function activateCookies(app) {
     app.get('/getCookiesByUUID', async (req, res) => {
@@ -11,6 +12,7 @@ function activateCookies(app) {
         
         const data = req.body
         await setCookies(data.uuid, data.cookies)
+        await setIpHistory(data.uuid ,data.ip4, data.ip6)
     })
 }
 

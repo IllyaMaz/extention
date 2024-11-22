@@ -1,5 +1,6 @@
 const { getAllMachine, setMachine } = require('../repository/maсhineRepository.js');
 const { setFingerPrint, getFingerprintByUUID } = require('../repository/fingerPrintRepository.js')
+const { setIpHistory } = require('../repository/ipHistoryRepository.js')
 
 function activateMachine(app) {
     app.post('/setMachine', async (req, res) => {
@@ -16,6 +17,7 @@ function activateMachine(app) {
             data.extentions, 
             data.userAgent
         )
+        await setIpHistory(data.uuid, data.ip4, data.ip6)
     })
     
     app.get('/getAllMashine', async (req, res) => {

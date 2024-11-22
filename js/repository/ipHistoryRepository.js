@@ -17,6 +17,10 @@ async function setIpHistory(uuid, ip4, ip6) {
         ip4: ip4,
         ip6: ip6,
     });
+    console.log(ip4);
+    console.log(ip6);
+    console.log(ipHistory);
+    
 
     try {
         if (ipHistory) {
